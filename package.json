@@ -2,20 +2,23 @@
   "name": "starterkit",
   "version": "1.0.0",
   "description": "Atecna Academy starter kit",
-  "main": "index.js",
-  "repository": "git@gitlab_atecna:atecna-frontend/formations/starterkit.git",
-  "author": "ATECNA",
   "license": "MIT",
+  "author": "ATECNA",
+  "repository": "git@gitlab_atecna:atecna-frontend/formations/starterkit.git",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest --passWithNoTests",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage --passWithNoTests"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.1",
+    "c8": "^7.11.3",
+    "eslint": "^8.16.0",
+    "typescript": "^4.6.4",
     "vite": "^2.9.9",
     "vitest": "^0.12.9"
   }
