@@ -44,9 +44,6 @@ pages:
   stage: deploy
   needs: ["build"]
   when: manual
-  cache:
-    paths:
-      - dist
   script:
     - mv dist public
   artifacts:
