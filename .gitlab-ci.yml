@@ -18,18 +18,21 @@ install:
 
 lint:
   stage: lint
+  needs: ["install"]
   script:
     # Run eslint
     - yarn lint
 
 test:
   stage: lint
+  needs: ["install"]
   script:
     # Run eslint
     - yarn coverage
 
 build:
   stage: build
+  needs: ["test", "lint"]
   artifacts:
     paths:
     - dist
@@ -39,6 +42,7 @@ build:
 
 pages:
   stage: deploy
+  needs: ["build"]
   when: manual
   cache:
     paths:
