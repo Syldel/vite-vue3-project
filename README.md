@@ -8,7 +8,7 @@ yarn
 yarn dev
 ```
 
-[Local:](http://localhost:3000/)
+[Local: http://localhost:3000/](http://localhost:3000/)
 
 ## Wiki
 
