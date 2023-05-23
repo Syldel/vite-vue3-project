@@ -1,0 +1,25 @@
+{
+  "prettier.enable": false,
+  "eslint.enable": true,
+  "eslint.packageManager": "yarn",
+  "editor.formatOnSave": false,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "css",
+    "json",
+    "jsonc",
+    "json5",
+    "markdown",
+    "scss",
+    "vue",
+    "yml",
+    "yaml"
+  ],
+  "vetur.validation.template": false
+}
