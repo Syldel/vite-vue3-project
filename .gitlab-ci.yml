@@ -27,6 +27,10 @@ test:
   needs: [install]
   script:
     - yarn coverage
+  coverage: '/All files\s+\|\s+\d+\.\d+/'
+  artifacts:
+    paths:
+      - coverage
 
 build:
   stage: build
