@@ -3,10 +3,12 @@ import NavHeader from '@/components/NavHeader.vue'
 import HomePage from '@/pages/HomePage.vue'
 import AboutPage from '@/pages/AboutPage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
+import LoginPage from '@/pages/LoginPage.vue'
 
 const routes = {
   '/': HomePage,
   '/about': AboutPage,
+  '/login': LoginPage,
 }
 
 export default {
