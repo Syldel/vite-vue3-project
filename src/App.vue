@@ -1,5 +1,4 @@
 <script lang="ts">
-import NavHeader from '@/components/NavHeader.vue'
 import HomePage from '@/pages/HomePage.vue'
 import AboutPage from '@/pages/AboutPage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
@@ -12,9 +11,6 @@ const routes = {
 }
 
 export default {
-  components: {
-    NavHeader,
-  },
   data() {
     return {
       currentPath: window.location.hash,

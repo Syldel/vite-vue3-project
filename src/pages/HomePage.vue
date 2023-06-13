@@ -1,12 +1,5 @@
 <script lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
-import TodoItem from '@/components/TodoItem.vue'
-
 export default {
-  components: {
-    TodoItem,
-    HelloWorld,
-  },
   data() {
     return {
       groceryList: [

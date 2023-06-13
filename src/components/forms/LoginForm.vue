@@ -1,13 +1,9 @@
 <script lang="ts">
 import * as Yup from 'yup'
-import DynamicForm from '@/forms/DynamicForm.vue'
 
 export interface LoginData { email: string; password: string }
 
 export default {
-  components: {
-    DynamicForm,
-  },
   emits: {
     formSubmitted(payload: LoginData) {
       // perform runtime validation

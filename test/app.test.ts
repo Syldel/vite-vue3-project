@@ -3,7 +3,7 @@ import type { VueWrapper } from '@vue/test-utils'
 import { mount } from '@vue/test-utils'
 import App from '@/App.vue'
 
-let wrapper: VueWrapper<App>
+let wrapper: VueWrapper
 
 beforeAll(() => {
   wrapper = mount(App)

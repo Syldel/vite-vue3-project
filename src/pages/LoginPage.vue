@@ -1,9 +1,7 @@
 <script lang="ts">
-import type { LoginData } from '@/forms/LoginForm.vue'
-import LoginForm from '@/forms/LoginForm.vue'
+import type { LoginData } from '@/components/forms/LoginForm.vue'
 
 export default {
-  components: { LoginForm },
   methods: {
     onSubmit: (values: LoginData) => {
       // eslint-disable-next-line no-console

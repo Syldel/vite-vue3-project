@@ -1,9 +1,9 @@
 import { beforeAll, beforeEach, expect, test } from 'vitest'
 import type { DOMWrapper, VueWrapper } from '@vue/test-utils'
 import { flushPromises, mount } from '@vue/test-utils'
-import LoginForm from '@/forms/LoginForm.vue'
+import LoginForm from '@/components/forms/LoginForm.vue'
 
-let wrapper: VueWrapper<LoginForm>
+let wrapper: VueWrapper
 let inputEmailElement: DOMWrapper<HTMLInputElement>
 let inputPasswordElement: DOMWrapper<HTMLInputElement>
 let spanElements: DOMWrapper<HTMLSpanElement>[]
