@@ -1,28 +1,22 @@
-<script lang="ts">
-export default {
-  props: {
-    msg: {
-      type: String,
-      default: '',
-    },
+<script setup lang="ts">
+import { ref } from 'vue'
+
+defineProps({
+  msg: {
+    type: String,
+    default: '',
   },
-  data: () => {
-    return {
-      count: 0,
-    }
-  },
-  mounted() {
-    // console.log('The component HelloWorld is now mounted.')
-  },
-  methods: {
-    increment() {
-      this.count++
-    },
-    decrement() {
-      if (this.count > 0)
-        this.count--
-    },
-  },
+})
+
+const count = ref(0)
+
+function increment() {
+  count.value++
+}
+
+function decrement() {
+  if (count.value > 0)
+    count.value--
 }
 </script>
 
