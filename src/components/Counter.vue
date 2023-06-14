@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import useCounter from '../composables/counter'
 
-const count = ref(0)
-
-function increment() {
-  count.value++
-}
-
-function decrement() {
-  if (count.value > 0)
-    count.value--
-}
+const { count, increment, decrement } = useCounter()
 </script>
 
 <template>
