@@ -1,7 +1,7 @@
 import { beforeAll, beforeEach, expect, test } from 'vitest'
 import type { DOMWrapper, VueWrapper } from '@vue/test-utils'
 import { mount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import Counter from '@/components/Counter.vue'
 
 let wrapper: VueWrapper
 let buttonPlusElement: DOMWrapper<HTMLButtonElement>
@@ -9,7 +9,7 @@ let buttonMinusElement: DOMWrapper<HTMLButtonElement>
 let divElement: DOMWrapper<HTMLDivElement>
 
 beforeAll(() => {
-  wrapper = mount(HelloWorld)
+  wrapper = mount(Counter)
 })
 
 beforeEach(() => {
