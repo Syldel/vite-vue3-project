@@ -12,7 +12,7 @@ export default defineConfig({
     }),
   ],
   test: {
-    include: ['test/**/*.test.{j,t}s'],
+    include: ['**/*.test.{j,t}s'],
     environment: 'jsdom',
   },
   resolve: {
