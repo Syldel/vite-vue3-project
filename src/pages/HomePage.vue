@@ -13,8 +13,8 @@ export default {
 </script>
 
 <template>
-  <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-    Home page
+  <h1>
+    <span>Home</span> page
   </h1>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
     <a
@@ -60,29 +60,30 @@ export default {
       <div class="bg-sky-900 aspect-square" />
     </div>
   </div>
-  <ol>
-    <TodoItem
-      v-for="item in groceryList"
-      :key="item.id"
-      :clef="item.id"
-      :todo="item"
-    />
-  </ol>
+  <div class="my-card">
+    <ol>
+      <TodoItem
+        v-for="item in groceryList"
+        :key="item.id"
+        :clef="item.id"
+        :todo="item"
+      />
+    </ol>
+  </div>
 
   <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style lang="sass" scoped>
+.logo
+  height: 6em
+  padding: 1.5em
+  will-change: filter
+  transition: filter 300ms
+
+  &:hover
+    filter: drop-shadow(0 0 2em #646cffaa)
+
+  &.vue:hover
+    filter: drop-shadow(0 0 2em #42b883aa)
 </style>

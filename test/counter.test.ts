@@ -18,21 +18,21 @@ beforeEach(() => {
 })
 
 test('Au départ le compteur est à zéro', () => {
-  divElement = wrapper.find('.card div')
+  divElement = wrapper.find('.my-card div')
   expect(divElement.text()).toBe('count is 0')
 })
 
 test('Cliquer sur le bouton + ajoute 1 au compteur', async () => {
   await buttonPlusElement.trigger('click')
-  divElement = wrapper.find('.card div')
+  divElement = wrapper.find('.my-card div')
   expect(divElement.text()).toBe('count is 1')
 })
 
 test('Cliquer sur le bouton - retire 1 au compteur', async () => {
-  divElement = wrapper.find('.card div')
+  divElement = wrapper.find('.my-card div')
   expect(divElement.text()).toBe('count is 1')
 
   await buttonMinusElement.trigger('click')
-  divElement = wrapper.find('.card div')
+  divElement = wrapper.find('.my-card div')
   expect(divElement.text()).toBe('count is 0')
 })

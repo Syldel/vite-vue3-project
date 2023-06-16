@@ -5,17 +5,17 @@ const { count, increment, decrement } = useCounter()
 </script>
 
 <template>
-  <div class="card">
+  <div class="my-card">
     <button
       type="button"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+      class="my-button"
       @click="increment()"
     >
       Incrémenter +
     </button>
     <button
       type="button"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+      class="my-button"
       @click="decrement()"
     >
       Décrémenter -

@@ -8,9 +8,11 @@ defineProps({
 </script>
 
 <template>
-  <h2 class="grey-color">
-    HelloWorld message: {{ msg }}
-  </h2>
+  <div class="my-card">
+    <h2 class="text-teal-600">
+      HelloWorld message: {{ msg }}
+    </h2>
 
-  <Counter />
+    <Counter />
+  </div>
 </template>
