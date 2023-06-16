@@ -8,4 +8,5 @@ export default {
     <span>About</span> page
   </h1>
   <MousePosition />
+  <ModalWithTeleport />
 </template>
