@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import type { SpyInstance } from 'vitest'
 import type { VueWrapper } from '@vue/test-utils'
 import { mount } from '@vue/test-utils'
-import { defineComponent } from 'vue'
 import { useEventListener } from './event'
 
 describe('useEventListener', () => {
