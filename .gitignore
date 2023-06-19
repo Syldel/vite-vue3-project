@@ -7,4 +7,3 @@ node_modules
 coverage
 __snapshots__
 components.d.ts
-auto-imports.d.ts
