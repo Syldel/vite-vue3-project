@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import type { SpyInstance } from 'vitest'
+import type { Mock, SpyInstance } from 'vitest'
 import type { VueWrapper } from '@vue/test-utils'
 import { mount } from '@vue/test-utils'
 import { useEventListener } from './event'
@@ -10,12 +10,11 @@ describe('useEventListener', () => {
   let addSpy: SpyInstance
   let TestComponent
   let wrapper: VueWrapper
-  const listener = vi.fn()
+  let listener: Mock
   const event = 'click'
 
   beforeEach(() => {
-    listener.mockReset()
-
+    listener = vi.fn()
     target = document.createElement('div')
 
     addSpy = vi.spyOn(target, 'addEventListener')
@@ -29,6 +28,10 @@ describe('useEventListener', () => {
     })
 
     wrapper = mount(TestComponent)
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
   })
 
   it('should add listener', () => {
