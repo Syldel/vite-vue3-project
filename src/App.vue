@@ -1,35 +1,10 @@
 <script lang="ts">
-import HomePage from '@/pages/HomePage.vue'
-import AboutPage from '@/pages/AboutPage.vue'
-import NotFoundPage from '@/pages/NotFoundPage.vue'
-import LoginPage from '@/pages/LoginPage.vue'
-
-const routes = {
-  '/': HomePage,
-  '/about': AboutPage,
-  '/login': LoginPage,
-}
-
-export default {
-  data() {
-    return {
-      currentPath: window.location.hash,
-    }
-  },
-  computed: {
-    currentView() {
-      return routes[this.currentPath.slice(1) || '/'] || NotFoundPage
-    },
-  },
-  mounted() {
-    window.addEventListener('hashchange', () => {
-      this.currentPath = window.location.hash
-    })
-  },
-}
+export default {}
 </script>
 
 <template>
   <NavHeader />
-  <component :is="currentView" />
+  <main>
+    <router-view />
+  </main>
 </template>
