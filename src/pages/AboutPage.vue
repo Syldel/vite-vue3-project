@@ -7,6 +7,13 @@ export default {
   <h1>
     <span>About</span> page
   </h1>
-  <MousePosition />
-  <ModalWithTeleport />
+  <div class="my-card">
+    <MousePosition />
+  </div>
+  <div class="my-card">
+    <ModalWithTeleport />
+  </div>
+  <div class="my-card">
+    <TransitionExample />
+  </div>
 </template>
