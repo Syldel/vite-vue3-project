@@ -16,6 +16,7 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vitest',
+        '@vueuse/core',
       ],
       dts: true,
     }),
