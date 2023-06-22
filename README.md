@@ -1,5 +1,22 @@
 ## Starterkit
 
+## Checklist
+
+J'ai expérimenté sur ce projet les choses suivantes :
+
+- [X] vue-router
+- [X] @antfu/eslint-config
+- [X] @vueuse/core
+- [X] vee-validate
+- [X] yup
+- [X] @vue/test-utils
+- [X] unplugin-auto-import
+- [X] unplugin-vue-components
+- [X] API Composition
+- [X] Teleport
+- [X] Transition
+
+
 ### Gitlab Template
 
 [Create a repo from this template on Gitlab](https://gitlab.com/atecna-frontend/formations/starterkit/export).
@@ -8,15 +25,6 @@
 cd your-project-name
 yarn install # If you don't have yarn installed, run: npm install -g yarn
 ```
-
-## Checklist
-
-When you use this template, try follow the checklist to update your info properly
-
-- [ ] Change the title in `index.html`
-- [ ] Remove tests in test directory and/or write your own
-
-And, enjoy :)
 
 ## Usage
 
