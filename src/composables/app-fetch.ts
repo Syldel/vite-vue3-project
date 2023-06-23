@@ -1,6 +1,8 @@
 import type { BeforeFetchContext, MaybeRefOrGetter, UseFetchOptions } from '@vueuse/core'
 import { createFetch } from '@vueuse/core'
 
+const baseUrl = import.meta.env.VITE_API_BASE_URL
+
 // TODO: Use real service
 const getUserToken = async () => 'jwt token'
 
@@ -28,7 +30,7 @@ export async function injectToken({ options }: BeforeFetchContext) {
 
 export default function useAppFetch(url: MaybeRefOrGetter<string>, useFetchOptions: UseFetchOptions) {
   const newFetch = createFetch({
-    baseUrl: 'https://api.coingecko.com/api/v3/',
+    baseUrl,
     // combination: 'overwrite',
     options: {
       beforeFetch: injectToken,
