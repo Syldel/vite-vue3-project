@@ -1,30 +1,21 @@
-<script lang="ts">
+<script setup lang="ts">
 import { ErrorMessage, Field, Form } from 'vee-validate'
 
-export default {
-  name: 'DynamicForm',
-  components: {
-    // eslint-disable-next-line vue/no-reserved-component-names
-    Form,
-    Field,
-    ErrorMessage,
+defineProps({
+  schema: {
+    type: Object,
+    required: true,
   },
-  props: {
-    schema: {
-      type: Object,
-      required: true,
-    },
-    submitButtonText: {
-      type: String,
-      default: 'Soumettre',
-    },
+  submitButtonText: {
+    type: String,
+    default: 'Soumettre',
   },
-  emits: ['formSubmitted'],
-  methods: {
-    submitForm(values) {
-      this.$emit('formSubmitted', values)
-    },
-  },
+})
+
+const emit = defineEmits(['formSubmitted'])
+
+function submitForm(values) {
+  emit('formSubmitted', values)
 }
 </script>
 

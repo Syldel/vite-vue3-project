@@ -1,14 +1,10 @@
-<script lang="ts">
+<script setup lang="ts">
 import type { LoginData } from '@/components/forms/LoginForm.vue'
 
-export default {
-  methods: {
-    onSubmit: (values: LoginData) => {
-      // eslint-disable-next-line no-console
-      console.log('onSubmit LoginData', values)
-      // TODO: Call API to login
-    },
-  },
+function onSubmit(values: LoginData) {
+  // eslint-disable-next-line no-console
+  console.log('onSubmit LoginData', values)
+  // TODO: Call API to login
 }
 </script>
 
