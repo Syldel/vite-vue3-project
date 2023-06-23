@@ -21,15 +21,15 @@ function submitForm(values) {
 
 <template>
   <Form
-    class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit="submitForm"
+    class="dynamic-form" @submit="submitForm"
   >
     <div
       v-for="{ as, name, label, children, ...attrs } in schema.fields"
       :key="name"
       class="mb-4"
     >
-      <label class="block text-gray-700 text-sm font-bold mb-2" :for="name">{{ label }}</label>
-      <Field :id="name" :as="as" :name="name" v-bind="attrs" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <label class="dynamic-form__label" :for="name">{{ label }}</label>
+      <Field :id="name" :as="as" :name="name" v-bind="attrs" class="dynamic-form__field">
         <template v-if="children && children.length">
           <component
             :is="tag"
@@ -41,12 +41,26 @@ function submitForm(values) {
           </component>
         </template>
       </Field>
-      <ErrorMessage :name="name" class="text-red-500 text-xs italic" />
+      <ErrorMessage :name="name" class="dynamic-form__error-message" />
     </div>
-    <div class="flex items-center justify-between">
+    <div class="my-button-container">
       <button class="my-button">
         {{ submitButtonText }}
       </button>
     </div>
   </Form>
 </template>
+
+<style lang="sass" scoped>
+.dynamic-form
+  @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4
+
+  &__label
+    @apply block text-gray-700 text-sm font-bold mb-2
+
+  &__field
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight
+
+  &__error-message
+    @apply text-red-500 text-xs italic
+</style>
