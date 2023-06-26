@@ -47,6 +47,6 @@
     "pre-commit": "yarn run lint-staged"
   },
   "lint-staged": {
-    "!*.{css,scss,sass}": "npm run lint:fix"
+    "!*.{css,scss,sass,svg}": "npm run lint:fix"
   }
 }
