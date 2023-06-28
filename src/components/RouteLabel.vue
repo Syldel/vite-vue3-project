@@ -1,18 +1,12 @@
-<script lang="ts">
+<script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
 
-export default {
-  setup() {
-    const route = useRoute()
-    const router = useRouter()
+const route = useRoute()
+const router = useRouter()
 
-    onMounted(async () => {
-      await router.isReady()
-    })
-
-    return { route }
-  },
-}
+onMounted(async () => {
+  await router.isReady()
+})
 </script>
 
 <template>

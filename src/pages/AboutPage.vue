@@ -1,7 +1,4 @@
-<script lang="ts">
-export default {
-}
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <h1>
