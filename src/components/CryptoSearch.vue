@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import useAppFetch from '@/composables/app-fetch'
-
-interface ISearchResultData { categories: any[]; coins: any[]; exchanges: any[]; icos: any[]; ntfs: any[] }
+import type { ICryptoSearchResult } from '@/interfaces/cryptos.interface'
 
 const props = defineProps({
   search: {
@@ -22,7 +21,7 @@ const {
   error,
   statusCode,
   isFetching,
-} = useAppFetch(searchUrl, { refetch: true, immediate: false }).get().json<ISearchResultData>()
+} = useAppFetch(searchUrl, { refetch: true, immediate: false }).get().json<ICryptoSearchResult>()
 </script>
 
 <template>
@@ -33,19 +32,12 @@ const {
       <div>Status Code: {{ statusCode }}</div>
     </div>
     <div v-else>
-      <h2>Coins list</h2>
-      <ul>
-        <li v-for="(item, index) in data?.coins" :key="item.id">
-          {{ index }} -
-          {{ item.id }}
-          {{ item.name }}
-          {{ item.api_symbol }}
-          {{ item.symbol }}
-          {{ item.market_cap_rank }}
-          <img :src="item.thumb" :alt="item.name">
-          {{ item.large }}
-        </li>
-      </ul>
+      <h2 class="crypto-search__title">
+        Coins list
+      </h2>
+      <div class="crypto-search__list-container">
+        <CryptoCoinsListItem v-for="item in data?.coins" :key="item.id" :item="item" />
+      </div>
     </div>
   </div>
 </template>
@@ -55,4 +47,13 @@ const {
 
   &__error-message
     color: #EF4444
+
+  &__title
+    margin-bottom: 10px
+    font-weight: bold
+
+  &__list-container
+    display: flex
+    flex-direction: column
+    gap: 10px
 </style>
