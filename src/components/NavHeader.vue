@@ -1,7 +1,4 @@
-<script lang="ts">
-export default {
-}
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <nav>
@@ -16,6 +13,9 @@ export default {
     </router-link> |
     <router-link to="/cryptos" class="nav-link">
       Cryptos
+    </router-link> |
+    <router-link to="/check-api" class="nav-link">
+      Check API
     </router-link> |
     <router-link to="/non-existent-path" class="nav-link">
       Broken Link

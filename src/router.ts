@@ -5,6 +5,7 @@ export const RouteNames = {
   ABOUT: 'about',
   LOGIN: 'login',
   CRYPTOS: 'cryptos',
+  CHECK_API: 'check-api',
   NOT_FOUND: 'not-found',
 }
 
@@ -28,6 +29,11 @@ export const routes = [
     path: '/cryptos',
     name: RouteNames.CRYPTOS,
     component: () => import('@/pages/CryptosPage.vue'),
+  },
+  {
+    path: '/check-api',
+    name: RouteNames.CHECK_API,
+    component: () => import('@/pages/CheckApiPage.vue'),
   },
   {
     path: '/:pathMatch(.*)*',
