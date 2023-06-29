@@ -1,8 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <NavHeader />
-  <main>
-    <router-view />
-  </main>
+  <DefaultLayout><router-view /></DefaultLayout>
 </template>

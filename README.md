@@ -15,6 +15,7 @@ J'ai expérimenté sur ce projet les choses suivantes :
 - [X] API Composition
 - [X] Teleport
 - [X] Transition
+- [X] Slots
 
 
 ### Gitlab Template

@@ -21,7 +21,7 @@
       Broken Link
     </router-link>
   </nav>
-  <RouteLabel />
+  <!-- <RouteLabel /> -->
 </template>
 
 <style lang="sass" scoped>
