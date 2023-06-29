@@ -5,21 +5,24 @@ interface ICryptoCoinsListItemProps {
   item: ICryptoCoin
 }
 
-defineProps<ICryptoCoinsListItemProps>()
+const props = defineProps<ICryptoCoinsListItemProps>()
+
+const detailPagePath = computed(() => `/coins/${props.item.id}`)
 </script>
 
 <template>
-  <div class="crypto-coins-list-item">
+  <router-link :to="detailPagePath" class="crypto-coins-list-item">
     <img :src="item.thumb" :alt="item.name" class="crypto-coins-list-item__thumb">
     <div class="crypto-coins-list-item__text">
       {{ item.name }} - {{ item.symbol }} - <span>(Market cap rank: {{ item.market_cap_rank }})</span>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <style lang="sass" scoped>
 .crypto-coins-list-item
   display: flex
+  cursor: pointer
 
   &__thumb
     margin-right: 5px

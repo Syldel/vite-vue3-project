@@ -5,6 +5,7 @@ export const RouteNames = {
   ABOUT: 'about',
   LOGIN: 'login',
   CRYPTOS: 'cryptos',
+  COINS: 'coins',
   CHECK_API: 'check-api',
   NOT_FOUND: 'not-found',
 }
@@ -29,6 +30,11 @@ export const routes = [
     path: '/cryptos',
     name: RouteNames.CRYPTOS,
     component: () => import('@/pages/CryptosPage.vue'),
+  },
+  {
+    path: '/coins/:id',
+    name: RouteNames.COINS,
+    component: () => import('@/pages/CryptosCoinDetailPage.vue'),
   },
   {
     path: '/check-api',

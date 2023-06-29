@@ -32,9 +32,12 @@ const {
       <div>Status Code: {{ statusCode }}</div>
     </div>
     <div v-else>
-      <h2 class="crypto-search__title">
+      <h2 v-if="data?.coins && data?.coins.length > 0" class="crypto-search__title">
         Coins list
       </h2>
+      <div v-else>
+        Liste vide
+      </div>
       <div class="crypto-search__list-container">
         <CryptoCoinsListItem v-for="item in data?.coins" :key="item.id" :item="item" />
       </div>
