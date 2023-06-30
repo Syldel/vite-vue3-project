@@ -34,6 +34,7 @@ const coinDescription = computed(() => data.value?.description.fr ? data.value?.
           <h2 class="crypto-coin-detail__title">
             {{ data.name }}
           </h2>
+          <LazyImage :src="data.image.large" :width="250" :height="250" :alt="data.name" />
           <p v-if="coinDescription">
             {{ coinDescription }}
           </p>
