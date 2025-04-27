@@ -1,4 +1,4 @@
-## Starterkit
+## Vue3 project
 
 ## Checklist
 
@@ -18,13 +18,11 @@ J'ai expérimenté sur ce projet les choses suivantes :
 - [X] Slots
 
 
-### Gitlab Template
-
-[Create a repo from this template on Gitlab](https://gitlab.com/atecna-frontend/formations/starterkit/export).
+### Install
 
 ```bash
-cd your-project-name
-yarn install # If you don't have yarn installed, run: npm install -g yarn
+cd vite-vue3-project
+npm install
 ```
 
 ## Usage
@@ -34,7 +32,7 @@ yarn install # If you don't have yarn installed, run: npm install -g yarn
 Just run and visit http://localhost:5173/
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ### Build
@@ -42,7 +40,7 @@ yarn dev
 To build the App, run
 
 ```bash
-yarn build
+npm run build
 ```
 
 And you will see the generated file in `dist` that ready to be served.
