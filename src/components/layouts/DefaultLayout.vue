@@ -21,6 +21,7 @@ import githubSvg from '@/images/github.svg'
 
 <style lang="sass" scoped>
 .main
+  overflow: hidden
   &__hr
     margin-top: 10px
 
