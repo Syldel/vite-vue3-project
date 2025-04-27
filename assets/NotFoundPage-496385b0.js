@@ -1,0 +1,1 @@
+import{_ as o,o as a,c as n,F as t,b as e,n as s}from"./index-3e314ea8.js";const c={},r=e("h1",null,[e("span",null,"Not Found"),s(" page ")],-1),_=e("a",{href:"/",class:"my-link"},"Home page",-1);function l(d,u){return a(),n(t,null,[r,_],64)}const m=o(c,[["render",l]]);export{m as default};
