@@ -1,5 +1,7 @@
 # Vue3 project
 
+[![Vue.js logo](src/images/vue.svg)](https://fr.vuejs.org/)
+
 ## Checklist
 
 J'ai expérimenté sur ce projet les choses suivantes :

@@ -31,11 +31,13 @@ const groceryList = [
         alt="Vue logo"
       >
     </a>
-    <img
-      src="@/images/logo-black.svg"
-      class="logo black"
-      alt="logo black"
-    >
+    <a href="https://github.com/" target="_blank">
+      <img
+        src="@/images/github.svg"
+        class="logo github"
+        alt="GitHub logo"
+      >
+    </a>
   </div>
   <div>
     <h2 className="bg-slate-100">
