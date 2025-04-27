@@ -1,10 +1,10 @@
 {
-  "name": "starterkit",
+  "name": "vite-vue3-project",
   "version": "1.0.0",
-  "description": "Atecna Academy starter kit",
-  "author": "ATECNA",
+  "description": "Vue3 project",
+  "author": "Sylvain D.",
   "license": "MIT",
-  "repository": "git@gitlab_atecna:atecna-frontend/formations/starterkit.git",
+  "repository": "git@github.com:Syldel/vite-vue3-project.git",
   "main": "src/main.ts",
   "scripts": {
     "dev": "vite",
