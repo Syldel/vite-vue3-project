@@ -1,4 +1,4 @@
-## Vue3 project
+# Vue3 project
 
 ## Checklist
 
@@ -18,7 +18,7 @@ J'ai expérimenté sur ce projet les choses suivantes :
 - [X] Slots
 
 
-### Install
+## Install
 
 ```bash
 cd vite-vue3-project
@@ -45,28 +45,76 @@ npm run build
 
 And you will see the generated file in `dist` that ready to be served.
 
-### Page
+## Déploiement sur GitHub Pages
 
-Deploy manually your pages on pipeline succeed, then visit (replace with your repository path): https://atecna-frontend.gitlab.io/formations/starterkit
+Ce guide explique les étapes à suivre pour configurer le déploiement automatique de ton projet sur GitHub Pages.
 
-## Wiki
+### GitHub Pages Build and deployment
 
-[Wiki](https://gitlab.com/atecna-frontend/formations/starterkit/-/wikis/home)
+1. Va dans les **Settings** de ton repository sur GitHub.
+2. Dans le menu de gauche, descends jusqu'à la section **Pages**.
+3. Dans la section **Source**, sélectionne la branche **`gh-pages`** comme source.
+4. Choisis le dossier **`/ (root)`**.
+5. Clique sur **Save**.
 
-## Figma
+### 🌐 Définir VITE_BASE_PATH sur GitHub
 
-- 🔧 Wireframe + User flow : [Voir le Fig Jam](https://www.figma.com/file/FSpJMub3WPbZILzmDPanfo/Atelier-Wireframe---Formation-front-end?node-id=0%3A1)
-- 🎉 UI kit (Logo/Styles/Icons/Typographie/Buttons/Components) : [Voir l'UI Kit](https://www.figma.com/file/uj1V4siWQmwfGuNuFDHvnb/Library---Formation?node-id=20%3A4107)
-- 🎨 Maquettes Def (Ecrans de l'application) : [Voir les Maquettes](https://www.figma.com/file/RnuECqTTyGvtItflD3TKVk/%5BWEB-SPORTIVE%5D-Front-end-starter?node-id=56%3A281)
-- 🎮 Prototype : [Voir le Prototype](https://www.figma.com/proto/RnuECqTTyGvtItflD3TKVk/%5BWEB-SPORTIVE%5D-Front-end-starter?page-id=56%3A248&node-id=201%3A1767&viewport=279%2C-3022%2C0.25&scaling=scale-down&starting-point-node-id=201%3A1767)
+Pour que le chemin des assets fonctionne en production sur GitHub Pages :
 
-# Vue 3 + TypeScript + Vite
+1. Aller dans **Settings > Secrets and variables > Actions**.
+2. Onglet **Variables** → **New repository variable**.
+3. Nom : `VITE_BASE_PATH`.
+4. Valeur : `/vite-vue3-project/`.
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Ensuite, dans le fichier `.github/workflows/deploy.yml`, ajouter la variable au moment du build :
 
-## Recommended IDE Setup
+```yaml
+- name: Build the app
+  run: npm run build
+  env:
+    VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### 🔐 Autoriser GitHub Actions à déployer avec `GITHUB_TOKEN`
+
+Pour que l'action GitHub puisse **pousser vers la branche `gh-pages`**, il faut autoriser le `GITHUB_TOKEN` à écrire dans le dépôt.
+
+✅ Étapes à suivre
+
+1. Ouvrir le dépôt sur **GitHub**.
+2. Aller dans **Settings** → **Actions** → **General**.
+3. Faire défiler jusqu’à la section **"Workflow permissions"**.
+4. Sélectionner **"Read and write permissions"**.
+5. Cliquer sur **Save**.
+
+---
+
+### 💡 Pourquoi c’est nécessaire ?
+
+Par défaut, GitHub donne au `GITHUB_TOKEN` seulement les permissions en lecture.  
+Mais pour **déployer sur GitHub Pages**, l'action a besoin de **pousser le contenu du dossier `/build`** dans la branche `gh-pages`.
+
+Cette autorisation permet au bot `github-actions[bot]` de :
+
+- Créer ou mettre à jour la branche `gh-pages`.
+- Déployer automatiquement à chaque push sur `main`.
+
+---
+
+### 📦 Exemple d'utilisation
+
+```yaml
+- name: Deploy to GitHub Pages
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ./build
+```
+
+### Notes
+
+- **Vérifie que le fichier `vite.config.ts` est bien configuré pour un déploiement sur GitHub Pages** (en ajoutant la ligne `base: '/<ton-repository>/'`).
+- Assure-toi que le workflow GitHub Actions fonctionne correctement en poussant sur la branche `main` et en vérifiant que les fichiers sont correctement déployés sur la branche `gh-pages`.
 
 ## Type Support For `.vue` Imports in TS
 
