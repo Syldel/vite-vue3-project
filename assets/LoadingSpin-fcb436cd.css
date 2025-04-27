@@ -1,0 +1,1 @@
+.loading-spin[data-v-fc90311f]{display:flex;align-items:center;gap:5px}.loading-spin svg[data-v-fc90311f]{width:1.25rem;height:1.25rem;color:#3b82f6;animation:spin-fc90311f 1s linear infinite}@keyframes spin-fc90311f{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.loading-spin svg circle[data-v-fc90311f]{opacity:.25}.loading-spin svg path[data-v-fc90311f]{opacity:.75}
